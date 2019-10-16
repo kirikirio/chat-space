@@ -1,10 +1,42 @@
+.chat-side {
+  width: 300px;
+  color: white;
+  float: left;
+}
+
 .side-header {
   background-color: #253141;
   height: 100px;
-  width: 300px;
+  width: 260px;
   display: flex;
   align-items: center;
   padding: 0 20px;
+}
+.side-header__box {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: bold;
+}
+.fa.fa-edit{
+  float: left;
+  background-color: white;
+  content: "\f044";
+}
+.fa.fa-cog{
+  float: right;
+  background-color: white;
+  content: "\f044";
+}
+.main-header {
+  box-sizing: border-box;
+  height: 100px;
+  padding: 0 40px;
+  display: inline-block;
+  justify-content: space-between;
+  border-bottom: solid 1px #eee;
+  overflow: scroll;
 }
 
 .groups {
@@ -12,20 +44,22 @@
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
-  width: 300px;
+  width: 260px;
 }
+.group__group-name {
+  color: white;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.groups .group__latest-message {
+  font-size: 11px;
+  color: white;
+}
+
 
 .messages {
   height: calc(100vh - 190px);
   padding: 46px 40px;
   background-color: #fafafa;
-  overflow: scroll;
-}
-.main-header {
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: solid 1px #eee;
   overflow: scroll;
 }
