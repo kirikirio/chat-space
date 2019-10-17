@@ -7,6 +7,7 @@
   %meta{:content => "XpsYJlQJN1He9MATvCFqvTpsEeA17R4hz4X+SMYJBJDVDDpTtNMXgkkWHk6A8q9EFecTx69aDboYyfbD2Jj/wg==", :name => "csrf-token"}/
 %body
   .flash-box
+  .notice グループを作成しました
   .wrapper
     .chat-side
       .side-header
@@ -16,9 +17,11 @@
             %li.side-header__box__menu__new-group
               %a{:href => "/groups/new"}
                 %i.fa.fa-edit
+                %span<>
             %li.side-header__box__menu__edit-user
               %a{:href => "/users/1270/edit"}
                 %i.fa.fa-cog
+                %span<>
       .groups
         %a{:href => "/groups/2617/messages"}
           .group

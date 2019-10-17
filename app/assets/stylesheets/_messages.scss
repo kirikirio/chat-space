@@ -1,3 +1,12 @@
+.notice {
+  color: white;
+  background-color: #38AEF0;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-align: center;
+  width: 100vw;
+}
+
 .chat-side {
   width: 300px;
   color: white;
@@ -12,6 +21,7 @@
   align-items: center;
   padding: 0 20px;
 }
+
 .side-header__box {
   color: white;
   display: flex;
@@ -19,19 +29,25 @@
   width: 100%;
   font-weight: bold;
 }
-.fa.fa-edit{
-  float: left;
-  background-color: white;
-  content: "\f044";
+
+.fa {
+  &.fa-edit {
+    float: left;
+    background-color: white;
+    content: "\f044";
+  }
+
+  &.fa-cog {
+    float: right;
+    background-color: white;
+    content: "\f044";
+  }
 }
-.fa.fa-cog{
-  float: right;
-  background-color: white;
-  content: "\f044";
-}
+
 .main-header {
   box-sizing: border-box;
   height: 100px;
+  width: 1140px;
   padding: 0 40px;
   display: inline-block;
   justify-content: space-between;
@@ -46,20 +62,40 @@
   overflow: scroll;
   width: 260px;
 }
+
 .group__group-name {
   color: white;
   font-size: 15px;
   margin-bottom: 5px;
 }
-.groups .group__latest-message {
+
+.group__latest-message {
   font-size: 11px;
   color: white;
 }
 
-
 .messages {
   height: calc(100vh - 190px);
   padding: 46px 40px;
+  box-sizing: border-box;
   background-color: #fafafa;
   overflow: scroll;
+}
+
+.form {
+  width: calc(100vw 300px);
+  display: block;
+  box-sizing: border-box;
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+}
+
+.input-box {
+  height: 50px;
+  position: relative;
+  width: 100%;
+  padding: 0 40px 0 10px;
+  color: #434a54;
+  border-style: none;
 }
