@@ -7,6 +7,7 @@
   width: 100vw;
 }
 
+
 .chat-side {
   width: 300px;
   color: white;
@@ -20,61 +21,101 @@
   display: flex;
   align-items: center;
   padding: 0 20px;
-}
-
-.side-header__box {
+  &__box {
   color: white;
   display: flex;
+  height: 24px;
   justify-content: space-between;
   width: 100%;
   font-weight: bold;
+  &__user-name{
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
 }
 
 .fa {
   &.fa-edit {
-    float: left;
-    background-color: white;
+    position: relative;right:25px;
+    color: white;
     content: "\f044";
   }
 
   &.fa-cog {
-    float: right;
-    background-color: white;
+    position: relative;bottom:25px;
+    color: white;
     content: "\f044";
   }
 }
-
+.chat-main{
+width: calc(100vw - 300px);
+float: left;
+}
 .main-header {
   box-sizing: border-box;
-  height: 100px;
-  width: 1140px;
+  height: 65px;
+  width: 100%;
   padding: 0 40px;
-  display: inline-block;
-  justify-content: space-between;
   border-bottom: solid 1px #eee;
-  overflow: scroll;
+  &__edit-btn{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 5px #38aef0;
+    position: absolute;
+    right: 40px;
+}
+  &__left-box {
+    margin:35px 0 0px 0;
+}
+ul{
+  display: inline;
+  font-size:12px;
+}
+li{
+  display: inline;
+  font-size: 12px;
+}
+h2{
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 15px;
+ } 
+  &__current-group{
+    margin:0 0 15px;
+    font-size: 30px;
+  }
+
 }
 
 .groups {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 50px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
   width: 260px;
 }
-
-.group__group-name {
+.group{
+  margin-bottom: 40px;
+  &__group-name {
   color: white;
   font-size: 15px;
   margin-bottom: 5px;
+  font-weight: bold;
+}
 }
 
 .group__latest-message {
   font-size: 11px;
   color: white;
+  font-weight: bold;
 }
 
 .messages {
+  width: calc(100vw - 300px);
   height: calc(100vh - 190px);
   padding: 46px 40px;
   box-sizing: border-box;
@@ -83,7 +124,7 @@
 }
 
 .form {
-  width: calc(100vw 300px);
+  width: calc(100vw - 280px);
   display: block;
   box-sizing: border-box;
   height: 90px;
@@ -98,4 +139,27 @@
   padding: 0 40px 0 10px;
   color: #434a54;
   border-style: none;
+  &__text {
+  width: 925px;
+  height: 50px;
+  padding: 0 10 0 10px;
+  }
+  &__image {
+      font-size: 1.3rem;
+      position: relative;
+      top: 0px;
+      right:70px;
+      cursor: pointer;
+  }
+}
+.submit-btn {
+  position:  absolute;  
+  bottom: -5px;
+  right: 12px;
+  width: 100px;
+  height: 50px;
+  background-color: #38aef0;
+  color: white;
+  margin: 0 40px 0 15px;
+  cursor: pointer;
 }

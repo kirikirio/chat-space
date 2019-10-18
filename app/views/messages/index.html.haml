@@ -17,11 +17,9 @@
             %li.side-header__box__menu__new-group
               %a{:href => "/groups/new"}
                 %i.fa.fa-edit
-                %span<>
             %li.side-header__box__menu__edit-user
               %a{:href => "/users/1270/edit"}
                 %i.fa.fa-cog
-                %span<>
       .groups
         %a{:href => "/groups/2617/messages"}
           .group
@@ -61,5 +59,4 @@
             %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
             %label.input-box__image{:for => "message_image"}
               %i.fa.fa-image
-              %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
           %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
