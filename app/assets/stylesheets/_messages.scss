@@ -35,20 +35,16 @@
   }
 }
 }
-
-.fa {
-  &.fa-edit {
-    position: relative;right:25px;
-    color: white;
-    content: "\f044";
-  }
-
-  &.fa-cog {
+i.fa.fa-edit{
+  position: relative;right:25px;
+  color: white;
+  content: "\f044";
+}
+i.fa-cog {
     position: relative;bottom:25px;
     color: white;
     content: "\f044";
   }
-}
 .chat-main{
 width: calc(100vw - 300px);
 float: left;
@@ -62,6 +58,7 @@ float: left;
   border-bottom: solid 1px #eee;
   &__edit-btn{
     display: block;
+    color: #38AEF0;
     height: 40px;
     line-height: 40px;
     padding: 0 20px;
@@ -103,13 +100,12 @@ h2.main-header__left-box__current-group{
   font-size: 15px;
   margin-bottom: 5px;
   font-weight: bold;
-}
-}
-
-.group__latest-message {
+  }
+  &__latest-message {
   font-size: 11px;
   color: white;
   font-weight: bold;
+}
 }
 
 .messages {
