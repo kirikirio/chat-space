@@ -1,48 +1,36 @@
-  .flash-box
+.flash-box
   .notice グループを作成しました
   .wrapper
-    .chat-side
-      .side-header
-        .side-header__box
-          %p.side-header__box__user-name seo
-          %ul.side-header__box__menu
-            %li.side-header__box__menu__new-group
-              = link_to '#' do
-                = fa_icon 'edit'
-            %li.side-header__box__menu__edit-user
-              = link_to '#' do
-                %= fa_icon 'cog'
-      .groups
-        #%a{:href => "/groups/2617/messages"}
-          .group
-            %p.group__group-name sample
-            %p.group__latest-message good buy word
+
+    = render 'shared/side_bar'
+
     .chat-main
       .main-header
         .main-header__left-box
-          %h2.main-header__left-box__current-group{"data-group_id" => "2617"}
-            テスト
+          %h2.main-header__left-box__current-group
+      
           %ul.main-header__left-box__member-list
-            Member：
-            %li.main-header__left-box__member-list__member kiri
-        # %a{:href => "/groups/2617/edit"}
+    
+            %li.main-header__left-box__member-list__member
+        %a{:href => "/groups/1/edit"}
+        = link_to 'EDIT' , edit_group_path(@group)do
           .main-header__edit-btn Edit
       .messages
-        .message{"data-message_id" => "6892"}
+        .message
           .message__upper-info
             %p.message__upper-info__talker kiri
-            %p.message__upper-info__date 2019/10/15(Tue) 18:30:02
-          %p.message__text aaa
-        .message{"data-message_id" => "6893"}
+            %p.message__upper-info__date 
+          %p.message__text 
+        .message
           .message__upper-info
-            %p.message__upper-info__talker kiri
-            %p.message__upper-info__date 2019/10/15(Tue) 18:30:26
-          %p.message__text あああ
-        .message{"data-message_id" => "6894"}
+            %p.message__upper-info__talker 
+            %p.message__upper-info__date 
+          %p.message__text 
+        .message
           .message__upper-info
-            %p.message__upper-info__talker kiri
-            %p.message__upper-info__date 2019/10/15(Tue) 18:30:46
-          %p.message__text あ
+            %p.message__upper-info__talker 
+            %p.message__upper-info__date 
+          %p.message__text 
       .form
         %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/2617/messages", :enctype => "multipart/form-data", :method => "post"}
           %input{:name => "utf8", :type => "hidden", :value => "✓"}/

@@ -6,8 +6,6 @@
   text-align: center;
   width: 100vw;
 }
-
-
 .chat-side {
   width: 300px;
   color: white;
@@ -21,6 +19,7 @@
   display: flex;
   align-items: center;
   padding: 0 20px;
+  position: relative;
   &__box {
   color: white;
   display: flex;
@@ -28,6 +27,16 @@
   justify-content: space-between;
   width: 100%;
   font-weight: bold;
+  &__menu__new-group {
+    position: absolute;
+    right:25px;
+    content: "\f044";
+  }
+  &__menu__edit-user{
+    position: absolute;
+    ;bottom:42px;
+    content: "\f044";
+  }
   &__user-name{
     color:white;
     font-weight: bold;
@@ -35,16 +44,12 @@
   }
 }
 }
-i.fa.fa-edit{
-  position: relative;right:25px;
+
+li .icon {
   color: white;
-  content: "\f044";
+  text-decoration: none;
 }
-i.fa-cog {
-    position: relative;bottom:25px;
-    color: white;
-    content: "\f044";
-  }
+
 .chat-main{
 width: calc(100vw - 300px);
 float: left;
@@ -95,13 +100,18 @@ h2.main-header__left-box__current-group{
 }
 .group{
   margin-bottom: 40px;
+  .group-names {
+    color: #fff;
+  }
   &__group-name {
   color: white;
   font-size: 15px;
   margin-bottom: 5px;
+  text-decoration: none ;
   font-weight: bold;
   }
   &__latest-message {
+  text-decoration: none ;
   font-size: 11px;
   color: white;
   font-weight: bold;
