@@ -1,5 +1,4 @@
 .flash-box
-  .notice グループを作成しました
   .wrapper
 
     = render 'shared/side_bar'
@@ -12,31 +11,15 @@
           %ul.main-header__left-box__member-list
     
             %li.main-header__left-box__member-list__member
-        %a{:href => "/groups/1/edit"}
-        = link_to 'EDIT' , edit_group_path(@group)do
-          .main-header__edit-btn Edit
-      .messages
-        .message
-          .message__upper-info
-            %p.message__upper-info__talker kiri
-            %p.message__upper-info__date 
-          %p.message__text 
-        .message
-          .message__upper-info
-            %p.message__upper-info__talker 
-            %p.message__upper-info__date 
-          %p.message__text 
-        .message
-          .message__upper-info
-            %p.message__upper-info__talker 
-            %p.message__upper-info__date 
-          %p.message__text 
-      .form
-        %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/2617/messages", :enctype => "multipart/form-data", :method => "post"}
-          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-          %input{:name => "authenticity_token", :type => "hidden", :value => "vy0FIZJun6A6UiUlHUUYWLZSjrvbYGMcrQ1Rvs7W38c0uidUcrS/c62w+3ghlt2hmdmMnEHXcId6QVk10EcklQ=="}/
-          .input-box
-            %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-            %label.input-box__image{:for => "message_image"}
-              %i.fa.fa-image
-          %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+              = link_to edit_group_path(@group)do
+                .main-header__edit-btn Edit
+    .messages
+      = render @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
