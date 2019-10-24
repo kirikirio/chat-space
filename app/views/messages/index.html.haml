@@ -7,9 +7,11 @@
       .main-header
         .main-header__left-box
           %h2.main-header__left-box__current-group
-      
+            = @group.name
           %ul.main-header__left-box__member-list
-    
+            menber
+            - @group.users.each do |user|
+              = user.name
             %li.main-header__left-box__member-list__member
               = link_to edit_group_path(@group)do
                 .main-header__edit-btn Edit
@@ -22,4 +24,4 @@
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+        = f.submit 'Send', class: 'form__submit' , id: 'ajax'
