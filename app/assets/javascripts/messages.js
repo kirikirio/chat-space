@@ -35,8 +35,6 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      data.id
-      data.content
       var html = buildHTML(data);
       $('.messages').append(html);
       $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight});
