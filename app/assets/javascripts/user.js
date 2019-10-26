@@ -55,7 +55,6 @@ $(function() {
       });
   });
   $(document).on("click", ".user-search-add", function() {
-    console.log(this);
     const userName = $(this).attr("data-user-name");
     const userId = $(this).attr("data-user-id");
     $(this)
