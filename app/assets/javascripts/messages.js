@@ -1,18 +1,18 @@
 $(function(){
   function buildHTML(message){
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html =  `<div class="message">
+    var html =  `<div class="message" data-id="${message.id}" >
                   <div class="message__upper-info">
                     <p class="message__upper-info__talker">
                       ${message.user_name}
                     </p>
                     <p class="message__upper-info__date">
-                      ${message.date}
+                      ${message.created_at}
                     </p>
                   </div>
                   <p class="message__text">
                     <div>
-                      ${message.text}
+                      ${message.content}
                     </div>
                       ${img}
                   </p>
@@ -42,5 +42,26 @@ $(function(){
     .fail(function(){
       alert('エラーが発生しています');
     })
-  })
+  });
+    var reloadMessages = function() {
+      last_message_id = $('.message').last().data("id");
+      $.ajax({
+        url: 'api/messages',
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+      var insertHTML = '';
+      messages.forEach(function (message) {
+      insertHTML = buildHTML(message);
+      $('.messages').append(insertHTML);
+      $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight});
+      })
+      .fail(function() {
+        　alert('error');
+      });
+    });
+  };
+  setInterval(reloadMessages, 5000);
 });
