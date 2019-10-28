@@ -13,7 +13,7 @@
             - @group.users.each do |user|
               = user.name
             %li.main-header__left-box__member-list__member
-              = link_to edit_group_path(@group)do
+              = link_to edit_group_path(@group), data: {"turbolinks": false} do 
                 .main-header__edit-btn Edit
     .messages
       = render @messages

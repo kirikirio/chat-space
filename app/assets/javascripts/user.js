@@ -31,6 +31,10 @@ $(function() {
   }
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
+  if (input.length == 0) {
+    $("#user-search-result").empty();
+  return false;
+}
     $.ajax({
       type: "GET",
       url: "/users",
@@ -44,8 +48,6 @@ $(function() {
           users.forEach(function(user) {
             addUser(user);
           });
-        } else if (input.length == 0) {
-          return false;
         } else {
           addNoUser();
         }
